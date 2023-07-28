@@ -80,7 +80,6 @@ export default function List(){
     function getTotal(){
         const dineros = list.map(item => item.price)
         const cantidades = list.map(item => item.quantity)
-        console.log(dineros)
         let sum = 0
         for(let i=0; i<dineros.length;i++){
             sum = sum + parseInt(dineros[i] * cantidades[i])
