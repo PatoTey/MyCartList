@@ -61,7 +61,7 @@ export default function List(){
 
     const cartlist = list.map(item => {
         return (
-            <div className="listItem" key={item.item}>
+            <div className="listItem" key={item.id}>
                 <div className="listItem-data">
                     <p className="item-child">( {item.quantity} )</p>
                     <p className="item-child">{item.item}</p>
