@@ -1,1 +1,1 @@
-A little ship list i did for my mom!
+A little shop list I did for my mom!
