@@ -7,8 +7,8 @@ export default function List(){
     const firstRender = useRef(true)
     const [formData, setFormData] = useState({
         item: "",
-        quantity : 0,
-        price: 0
+        quantity : 1,
+        price: 1
     })
 
     useEffect(()=>{
@@ -41,8 +41,8 @@ export default function List(){
 
         setFormData({
             item: "",
-            quantity : 0,
-            price: 0
+            quantity : 1,
+            price: 1
         })
         nameRef.current.value = ""
         
@@ -66,12 +66,12 @@ export default function List(){
 
     const cartlist = list.map(item => {
         return (
-            <div className="listItem" key={item.id}>
+            <div className="listItem" key={item.id}>              
                 <div className="listItem-data">
                     <p className="item-child">( {item.quantity} )</p>
                     <p className="item-child">{item.item}</p>
                     <p className="item-child">$ {item.price} / u</p>
-                </div>
+                </div>             
                 <button className="item-btn" onClick={()=>handleDelete(item.id)} >X</button>
             </div>
         )
@@ -82,7 +82,7 @@ export default function List(){
         const cantidades = list.map(item => item.quantity)
         let sum = 0
         for(let i=0; i<dineros.length;i++){
-            sum = sum + parseInt(dineros[i] * cantidades[i])
+            sum = sum + parseFloat(dineros[i] * cantidades[i])
         }
         return sum
     }
@@ -94,17 +94,17 @@ export default function List(){
                 <input className="form-input" ref={nameRef} name="item" id="input-item" type="text" value={formData.name} placeholder="Ex: 2kg Cheese" onChange={handleChange} required/>
 
                 <label className="form-label"  htmlFor="input-quantity" aria-label="Enter a desired quantity" required>Quantity</label>
-                <input className="form-input" name="quantity" id="input-quantity" type="number" value={formData.quantity} min={0} onChange={handleChange}/>
+                <input className="form-input" name="quantity" id="input-quantity" type="number" value={formData.quantity} min={1} max={99} onChange={handleChange}/>
 
                 <label className="form-label"  htmlFor="input-price" aria-label="Enter item price" required>Price</label>
-                <input className="form-input" name="price" id="input-price" type="number" value={formData.price} min={0} onChange={handleChange}/>
+                <input className="form-input" name="price" id="input-price" type="number" step="0.01" value={formData.price} min={0.1} onChange={handleChange}/>
                 <button className="form-btn" type="submit" >Add item</button>
             </form>
             <div className="total">
                  Total: $ {getTotal()}
             </div>
             <div className="itemList">
-                {cartlist !== "" ? cartlist : <h3>Nothing in the list!</h3>}
+                {cartlist}
             </div>
         </main>
     )

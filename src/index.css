@@ -14,12 +14,18 @@ header {
 	background-color: var(--headerColor);
 	padding: 2em;
 	text-align: center;
+	color: var(--mainColor);
 }
 
 header h1{
 	margin: 0;
 	font-size: 1.8rem;
-	color: #F7EBDE;
+	color: var(--mainColor);
+}
+
+header h3 {
+	margin-top: 0.5em;
+	margin-bottom: 0;
 }
 
 footer {
@@ -30,7 +36,7 @@ footer {
 }
 
 footer a{
-	text-decoration: none;
+	text-decoration: underline;
 	color: #F7EBDE;
 }
 
@@ -68,6 +74,7 @@ footer a{
 .content {
 	background-color: var(--mainColor);
 	padding: 1em;
+	position: relative;
 }
 
 .itemList {
@@ -112,4 +119,34 @@ footer a{
 	font-weight: bold;
 }
 
+.unlink {
+	text-decoration: none;
+	color: inherit;
+}
 
+
+.usage-page {
+	text-align: center;
+	padding: 3em;
+}
+
+.usage-page ul{
+	padding: 0;
+}
+
+.popup {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	background-color: rgba(70, 45, 33, 0.7);
+	padding: 1em;
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
+}
+
+.hide {
+	visibility: hidden;
+}
