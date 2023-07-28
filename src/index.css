@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+	--mainColor:   #F7EBDE;
+	--headerColor:  #B6752B;
+	--footerColor: #996224;
+	--formColor:  	#EFD8BD;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	margin: 0;
+	font-family: 'Rubik', sans-serif;
 }
+
+header {
+	background-color: var(--headerColor);
+	padding: 2em;
+	text-align: center;
+}
+
+header h1{
+	margin: 0;
+	font-size: 1.8rem;
+	color: #F7EBDE;
+}
+
+footer {
+	background-color: var(--footerColor);
+	text-align: center;
+	color: #F7EBDE;
+	padding: 1em;
+}
+
+footer a{
+	text-decoration: none;
+	color: #F7EBDE;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	text-align: center;
+	background-color: var(--formColor);
+	border-radius: 1em;
+	padding: 1em;
+}
+
+.form-btn {
+	border: none;
+	border-radius: 1em;
+	padding: 1.5em;
+	width: 10em;
+	align-self: center;
+	background-color: greenyellow;
+}
+
+.form-input {
+	height: 3em;
+	text-align: center;
+	border: none;
+	border-radius: 1em;
+}
+
+.form-label {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.content {
+	background-color: var(--mainColor);
+	padding: 1em;
+}
+
+.itemList {
+	margin: 1em 0;
+}
+
+.listItem {
+	display: flex;
+	border: 1px solid black;
+	background-color:var(--formColor);
+	border-radius: 1em;
+	padding: 1em;
+	justify-content: space-between;
+	margin: 1em 0;
+
+}
+
+.listItem-data {
+	display: flex;
+	gap:0.5em;
+	font-size: 1.2rem;
+	flex-wrap: wrap;
+}
+
+.item-child {
+	max-inline-size: 4.5em;
+	overflow-wrap: break-word;
+	margin: 0;
+}
+
+.item-btn {
+	width: 3em;
+	border: none;
+	border-radius: 1em;
+	background-color: #ff6c5c;
+}
+
+.total {
+	text-align: center;
+	margin: 0.5em 0;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+
