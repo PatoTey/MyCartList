@@ -12,8 +12,13 @@ export default function List(){
     })
 
     useEffect(()=>{
-        const mylist = JSON.parse(localStorage.getItem("mylist"))
-        setList(mylist)
+        const aux = localStorage.getItem("mylist")
+        if(aux){
+            const mylist = JSON.parse(aux)
+            setList(mylist)
+        }else{
+            localStorage.setItem("mylist", JSON.stringify([]))
+        }
     },[])
 
     useEffect(()=>{
